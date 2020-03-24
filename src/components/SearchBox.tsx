@@ -15,13 +15,14 @@ export default function SearchBox(props: SearchBoxProps) {
         setValue(e.target.value);
     }
 
-    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement | HTMLButtonElement>) => {
+        e.preventDefault()
         props.onSearchButtonCallback(value)
     }
 
     return (
         <div>
-            <form autoComplete="off">
+            <form autoComplete="off" onSubmit={handleSubmit}>
                 <TextField
                     id="search-input"
                     label="Type in the title of the movie"
@@ -30,10 +31,10 @@ export default function SearchBox(props: SearchBoxProps) {
                     onChange={handleChange}
                 />
                 <Button
+                    onClick={handleSubmit}
                     variant="contained"
                     color="primary"
                     endIcon={<SearchIcon>search</SearchIcon>}
-                    onClick={handleClick}
                 >
                     Search
                 </Button>

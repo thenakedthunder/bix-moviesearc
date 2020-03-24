@@ -12,8 +12,11 @@ import MoviePopper from './MoviePopper';
 
 const useStyles = makeStyles({
     table: {
-        minWidth: 650,
+        maxWidth: 650,
     },
+    //tableContainer: {
+    //    minHeight: 600
+    //}
 });
 
 function createData(title: string, year: number, director: string, rating: number) {
@@ -52,7 +55,7 @@ export default function MoviesTable(props: MoviesTableProps) {
 
     return (
         <div>
-            <TableContainer component={Paper}>
+            <TableContainer /*className={classes.tableContainer}*/ component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
                     <TableHead>
                         <TableRow>
@@ -80,8 +83,8 @@ export default function MoviesTable(props: MoviesTableProps) {
                 <MoviePopper
                     anchorEl={anchorEl}
                     movieTitle={popperMovieTitle}
-                    movieId={movieId}>
-                </MoviePopper>
+                    movieId={movieId}
+                />
             }
         </div>
     );
