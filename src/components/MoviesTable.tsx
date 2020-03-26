@@ -7,7 +7,6 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { PopperPlacementType, Popper, Fade, Typography } from '@material-ui/core';
 import MoviePopper from './MoviePopper';
 
 const useStyles = makeStyles({
@@ -58,7 +57,7 @@ export default function MoviesTable(props: MoviesTableProps) {
 
     return (
         <div>
-            {rows.length == 0 ?
+            {rows.length === 0 ?
                 "no movies found" :
 
                 <TableContainer component={Paper}>

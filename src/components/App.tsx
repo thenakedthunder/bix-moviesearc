@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import logo from '../logo.svg';
 import '../styles/App.css';
 import SearchBox from './SearchBox'
 import MoviesTable from './MoviesTable';

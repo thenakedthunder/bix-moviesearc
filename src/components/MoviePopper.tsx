@@ -1,4 +1,4 @@
-import { Popper, Fade, Paper, Typography, ClickAwayListener } from "@material-ui/core";
+import { Popper, Fade, Paper, ClickAwayListener } from "@material-ui/core";
 import React, { useEffect } from "react";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 
@@ -114,7 +114,7 @@ export default function MoviePopper(props: MoviePopperProps) {
     }
 
     const renderFirstParagraph = (paragraphElement: string) => {
-        if (paragraphElement != "") {
+        if (paragraphElement !== "") {
             paragraphElement = "<strong>From Wikipedia:</strong> " + paragraphElement + "..."
             return(
                 <div dangerouslySetInnerHTML={{ __html: paragraphElement }}></div>
